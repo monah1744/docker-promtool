@@ -10,7 +10,7 @@ We built this image to be lightweight, just alpine linux with the `promtool` bin
 
 ## About this repo
 
-This repo just tracks changes to the Dockerfile.  The built image can be found at https://hub.docker.com/r/dnanexus/promtool/
+This repo just tracks changes to the Dockerfile.  The built image can be found at <https://hub.docker.com/repository/docker/monah1744/promtool>
 
 ## Usage
 
@@ -22,7 +22,7 @@ Check a prometheus config file:
 docker run \
   -v /path/to/local/prometheus/configs:/tmp \
   dnanexus/promtool:2.9.2 \
-  check config /tmp/prometheus.yml
+  promtool check config /tmp/prometheus.yml
 ```
 
 Check a prometheus rules file
@@ -31,7 +31,7 @@ Check a prometheus rules file
 docker run \
   -v /path/to/local/prometheus/configs:/tmp \
   dnanexus/promtool:2.9.2 \
-  check rules /tmp/prometheus.rules.yml
+  promtool check rules /tmp/prometheus.rules.yml
 ```
 
 ### Using drone pipeline step
@@ -62,5 +62,6 @@ validate-prometheus-config:
 
 ## Version History
 
+* 2.41.0: Upgrade releases (go, alpine)
 * 2.9.2: Alignment with prometheus releases
 * 1.0: Initial release
